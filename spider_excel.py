@@ -16,7 +16,7 @@ import types
 import FilterData
 import pandas
 
-MERGED_URL = 'http://136.17.76.164:8082/changes/?q=status:merged&n=25&O=81'
+MERGED_URL = 'http://xxx.xxx.xxx.xxx:8080/changes/?q=status:merged&n=25&O=81'
 global val
 val = 1
 def dict_get(dict, objkey, default):
