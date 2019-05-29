@@ -36,11 +36,11 @@ def time_cmp(first_time, second_time):
     return int(first_time) - int(second_time)
 
 def time_format(time):
-    time = time.replace('.000000000', "")
-    time = time.replace(' ', "")
+    times = time.replace('.000000000', "")
+    time = times.replace(' ', "")
     time = time.replace(':', "")
     time = time.replace('-', "")
-    return time
+    return time, times
 	
 def requesst(url,limit_time,start):
 	continue_flag = 1
@@ -89,12 +89,12 @@ def requesst(url,limit_time,start):
 				wsheet.write(val4, 3, v)
 				val4 += 1
 			elif key == "updated":
-				vvalue = time_format(value)
+				vvalue, tvalue = time_format(value)
 				if (time_cmp(vvalue, limit_time) < 0):
 					continue_flag = 0
 					break
 				else:
-					wsheet.write(val5, 4, value)
+					wsheet.write(val5, 4, tvalue)
 					val5 += 1
 			else:
 				pass
